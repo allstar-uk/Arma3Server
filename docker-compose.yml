@@ -6,10 +6,22 @@ services:
     platform: linux/amd64
     container_name: arma3
     network_mode: host
+    ports:
+      - '2302:2302/udp'
+      - '2303:2303/udp'
+      - '2304:2304/udp'
+      - '2305:2305/udp'
+      - '2306:2306/udp'
     volumes:
       - './missions:/arma3/mpmissions'
       - './configs:/arma3/configs'
       - './mods:/arma3/mods'
       - './servermods:/arma3/servermods'
-    env_file: .env
+      - './battleye:/arma3/battleye'
+    environment:
+      - ARMA_CONFIG=main.cfg
+      - HEADLESS_CLIENTS=0
+      - ARMA_PARAMS=autoInit,noSound
+      - STEAM_USER=cloudbounddevs
+      - STEAM_PASSWORD=xpr_wyx0mvx.KQC6jht
     restart: unless-stopped
