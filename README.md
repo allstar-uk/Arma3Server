@@ -23,7 +23,7 @@ An Arma 3 Dedicated Server. Updates to the latest version every time it is resta
         -e ARMA_CONFIG=main.cfg \
         -e STEAM_USER=myusername \
         -e STEAM_PASSWORD=mypassword \
-        synixebrett/arma3server
+        peepodark/arma3server
 ```
 
 ### docker-compose
